@@ -28,8 +28,25 @@ if (file_exists("css")) {
     <link rel="icon" href="/favicon.png" />
     <meta name="description" content="Controle de Quota de Impressão">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 
     <title>IBQUOTA 3 - Controle de Quota de Impressão</title>
+
+<script>
+  $(document).ready(function(){
+    $("#base").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue == '1'){
+                $(".jumbotron").hide();
+              } else{
+                $(".jumbotron").show();
+            }
+        });
+    }).change();
+});
+</script>
+
   </head>
   <body>
    
